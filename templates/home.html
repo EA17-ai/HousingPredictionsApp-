@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Home Page</title>
+</head>
+<body>
+<h1>Housing Predictions</h1>
+<label for="location">Choose location:</label>
+<form action="/page" method="post">
+<select  id="location" name="location">
+ {% for i in column%}
+    <option value="{{i}}" >{{i}}</option>
+    {% endfor %}
+</select><br>
+    <label>No of Bedrooms</label>
+<select  id="bhk" name="bhk">
+ {% for i in range(5)%}
+    <option value="{{i}}" >{{i}}</option>
+    {% endfor %}
+
+</select>
+    <br>
+    <label>No of Bathrooms</label>
+<select  id="bath" name="bath">
+ {% for i in range(5)%}
+    <option value="{{i}}" >{{i}}</option>
+    {% endfor %}
+</select>
+    <label>Square Feet (in range 500-10000)</label>
+    <input type="range" min="100" max="10000" value="1000" id="sqft" name="sqft">
+
+    <input type="submit" value="Check">
+</form>
+</body>
+</html>
